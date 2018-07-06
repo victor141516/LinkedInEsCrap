@@ -7,10 +7,11 @@ def get_linkedin():
     email = request.args.get('e')
     try:
         profile = get_profile(email)
-    except Exception:
+    except Exception as e:
+        print(e)
         return ':('
-    if request.args.has_key('r'):
-        return redirect("http://www.example.com", code=302)
+    if 'r' in request.args:
+        return redirect(profile, code=302)
     else:
         return profile
 
