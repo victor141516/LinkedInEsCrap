@@ -11,5 +11,5 @@ $ docker run --rm -d \
     linkedinescrap
 ```
 
-SCRAP_EMAIL and SCRAP_PASS are any LinkedIn credentials
+`SCRAP_EMAIL` and `SCRAP_PASS` are any LinkedIn credentials
 You may need to login to LinkedIn from the server once to avoid 2FA
