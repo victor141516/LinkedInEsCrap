@@ -9,7 +9,10 @@ def get_linkedin():
         profile = get_profile(email)
     except Exception as e:
         print(e)
-        return ':('
+        if 'err' in request.args:
+            return str(e)
+        else:
+            return ':('
     if 'r' in request.args:
         return redirect(profile, code=302)
     else:
