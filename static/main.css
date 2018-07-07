@@ -1,0 +1,65 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+body {
+    background-image: url('bg.gif');
+    background-size: 2rem;
+}
+
+.hel {
+    font-family: Helvetica;
+}
+
+.vertical-align {
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    bottom: 70%;
+}
+
+.horizontal-align {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    align-items: center;
+    padding: 2rem 5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0.6rem 0.8rem 5rem black;
+}
+
+label {
+    font-size: 2.75rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.2rem;
+    width: 25rem;
+    font-size: 2rem;
+    border: 2px dashed #3a86ff;
+    text-align: center;
+}
+
+button {
+    background-color: #3a86ff;
+    border: 2px solid #3a86ff;
+    color: #fff;
+    width: auto;
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+}
+
+.space-bot {
+    margin-bottom: 2rem;
+}
