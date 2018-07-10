@@ -60,6 +60,16 @@ button {
     padding: .5rem 1rem;
 }
 
+p {
+    margin: 0;
+}
+
 .space-bot {
     margin-bottom: 2rem;
+}
+
+.error-text {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

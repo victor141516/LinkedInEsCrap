@@ -16,6 +16,8 @@ def get_linkedin():
         print(e)
         if 'err' in request.args:
             return str(e)
+        elif 'web' in request.args:
+            return redirect('/?errorText', code=200)
         else:
             return ':('
     if 'r' in request.args:
