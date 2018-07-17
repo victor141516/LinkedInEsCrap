@@ -12,7 +12,8 @@ class Scrapper(object):
         self.session = requests.Session()
         if cookie_jar is not None:
             self.session.cookies = cookie_jar
-        self.login()
+        else:
+            self.login()
 
     def login(self):
         html = self.session.get('https://www.linkedin.com/').text
