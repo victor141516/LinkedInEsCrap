@@ -13,8 +13,6 @@ services:
     image: linkedinescrap
     build:
       context: .
-    volumes:
-      - .:/app
     environment:
       - "SCRAP_EMAIL=${SCRAP_EMAIL}"
       - "SCRAP_PASS=${SCRAP_PASS}"
