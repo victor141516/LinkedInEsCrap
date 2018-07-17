@@ -7,7 +7,7 @@ from werkzeug.exceptions import NotFound
 
 app = Flask(__name__)
 linkedin_scrapper = Scrapper(config.SCRAP_EMAIL, config.SCRAP_PASS)
-cache = Redpie(0, 'redis')
+cache = Redpie(0, 'linkedinescrap-redis')
 
 
 @app.route("/get")
