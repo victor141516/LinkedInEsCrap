@@ -22,7 +22,7 @@ services:
       - caddywork
       - linkedinescrap
 
-  redis:
+  linkedinescrap-redis:
     container_name: linkedinescrap-redis
     image: redis
     volumes:
