@@ -5,11 +5,13 @@ import urllib.parse
 
 
 class Scrapper(object):
-    def __init__(self, email, password):
+    def __init__(self, email, password, cookie_jar=None):
         super(Scrapper, self).__init__()
         self.email = email
         self.password = password
         self.session = requests.Session()
+        if cookie_jar is not None:
+            self.session.cookies = cookie_jar
         self.login()
 
     def login(self):

@@ -6,8 +6,12 @@ from redpie import Redpie
 from werkzeug.exceptions import NotFound
 
 app = Flask(__name__)
-linkedin_scrapper = Scrapper(config.SCRAP_EMAIL, config.SCRAP_PASS)
 cache = Redpie(0, 'linkedinescrap-redis')
+
+cookies = None
+if '_cookies' in cache:
+    cookies = cache['_cookies']
+linkedin_scrapper = Scrapper(config.SCRAP_EMAIL, config.SCRAP_PASS, cookie_jar=cookies)
 
 
 @app.route("/get")
