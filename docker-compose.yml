@@ -1,0 +1,29 @@
+version: '3'
+networks:
+  linkedinescrap:
+    driver: bridge
+  caddywork:
+    external:
+      name: caddywork
+
+
+services:
+  linkedinescrap:
+    container_name: linkedinescrap
+    image: linkedinescrap
+    build:
+      context: .
+    volumes:
+      - .:/app
+    networks:
+      - caddywork
+      - linkedinescrap
+
+  redis:
+    container_name: linkedinescrap-redis
+    image: redis
+    volumes:
+      - ./db:/data
+    networks:
+      - linkedinescrap
+    command: redis-server --appendonly yes

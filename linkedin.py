@@ -24,7 +24,6 @@ class Scrapper(object):
             'loginCsrfParam': csrf
         })
 
-
     def retry_login(tries=3):
         def wrapped(f):
             def f_retry(self, *args, **kwargs):
@@ -41,7 +40,6 @@ class Scrapper(object):
                             raise(e)
             return f_retry
         return wrapped
-
 
     def _fast_method(self, email_to_get):
         trying = self.session.get(f'https://www.linkedin.com/sales/gmail/profile/proxy/{email_to_get}')
