@@ -20,7 +20,7 @@ def get_linkedin():
     profile = None
     if email in cache:
         cached_profile = cache[email]
-        if (cached_profile['date']-datetime.now()).days < 30:
+        if (cached_profile['date']-datetime.now()).days < 120:
             profile = cached_profile['data']
 
     if profile is None:
@@ -30,11 +30,11 @@ def get_linkedin():
         except Exception as e:
             print(e)
             if 'err' in request.args:
-                return str(e)
+                return str(e), 404
             elif 'web' in request.args:
                 return redirect('/?errorText', code=302)
             else:
-                return ':('
+                return ':(', 404
     if 'r' in request.args:
         return redirect(profile, code=302)
     else:
