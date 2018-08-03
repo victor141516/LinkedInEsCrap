@@ -63,6 +63,7 @@ class Scrapper(object):
         terms = []
         for selector in ['.li-user-name > a', '.li-user-title']:
             try:
+                [e.decompose() for e in soup.select('.li-user-add-pos')]
                 terms.append(soup.select_one(selector).text)
             except Exception:
                 pass
