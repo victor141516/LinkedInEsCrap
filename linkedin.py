@@ -89,3 +89,13 @@ class Scrapper(object):
             return fast
         else:
             return self._safe_method(email_to_get)
+
+    def get_title(self, email=None, link=None):
+        if email:
+            link = self.get_profile(email)
+
+        if link is None:
+            return ':('
+
+        html = self.session.get(link).text
+        return html.split('"headline":"')[1].split('"')[0]
