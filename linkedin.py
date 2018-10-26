@@ -98,4 +98,4 @@ class Scrapper(object):
             return ':('
 
         html = self.session.get(link).text
-        return html.split('"headline":"')[1].split('"')[0]
+        return html.split('&quot;headline&quot;:&quot;')[1].split('&quot;')[0]
