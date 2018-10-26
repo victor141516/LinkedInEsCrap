@@ -16,7 +16,7 @@ linkedin_scrapper = Scrapper(config.SCRAP_EMAIL, config.SCRAP_PASS, cookie_jar=c
 @app.route("/title")
 def get_title():
     email = request.args.get('e')
-    link = email = request.args.get('l')
+    link = request.args.get('l')
     return linkedin_scrapper.get_title(email=email, link=link)
 
 @app.route("/get")
